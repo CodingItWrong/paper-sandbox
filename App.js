@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, useColorScheme, View } from 'react-native';
-import { Provider as PaperProvider, Text, useTheme } from 'react-native-paper';
+import { Provider as PaperProvider, TextInput, useTheme } from 'react-native-paper';
 
 export default function App() {
   return (
@@ -15,8 +15,15 @@ function HomeScreen() {
   const backgroundStyle = {backgroundColor: theme.colors.background};
   return (
     <View style={[styles.container, backgroundStyle]}>
-      <Text>Open up App.js to start working on your app!!!</Text>
       <StatusBar style="auto" />
+      <TextInput mode="flat" label="TextInput flat" />
+      <TextInput mode="flat" disabled label="TextInput flat disabled" />
+      <TextInput mode="flat" multiline label="TextInput flat multiline" />
+      <TextInput mode="flat" multiline disabled label="TextInput flat multiline disabled" />
+      <TextInput mode="outlined" label="TextInput outlined" />
+      <TextInput mode="outlined" disabled label="TextInput outlined disabled" />
+      <TextInput mode="outlined" multiline label="TextInput outlined multiline" />
+      <TextInput mode="outlined" multiline disabled label="TextInput outlined multiline disabled" />
     </View>
   );
 }
@@ -24,7 +31,5 @@ function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
